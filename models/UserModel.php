@@ -9,18 +9,25 @@ class UserModel extends Model {
 
     public static function create(string $username, string $email, string $password, string $displayName): int {
         $hash = password_hash($password, PASSWORD_DEFAULT);
+<<<<<<< HEAD
         $userId = self::insert([
+=======
+        return self::insert([
+>>>>>>> origin/main
             'ten_dang_nhap' => $username,
             'email' => $email,
             'mat_khau_da_bam' => $hash,
             'ten_hien_thi' => $displayName,
         ]);
+<<<<<<< HEAD
         if (!self::updateProfile($userId, [
             'url_anh_dai_dien' => app_url('/avatars/' . $userId),
         ])) {
             throw new RuntimeException('Unable to assign a generated avatar to the new account.');
         }
         return $userId;
+=======
+>>>>>>> origin/main
     }
 
     public static function authenticate(string $email, string $password): ?array {
@@ -36,6 +43,7 @@ class UserModel extends Model {
         return self::update($id, $data);
     }
 
+<<<<<<< HEAD
     public static function listForAdmin(string $query, int $limit, int $offset): array {
         $where = '';
         $params = [];
@@ -86,6 +94,8 @@ class UserModel extends Model {
         return (int)$stmt->fetchColumn();
     }
 
+=======
+>>>>>>> origin/main
     public static function getRoles(int $userId): array {
         $sql = "SELECT r.ma_vai_tro, r.ten_vai_tro
                 FROM vai_tro r
@@ -101,6 +111,7 @@ class UserModel extends Model {
         $stmt = self::db()->prepare($sql);
         return $stmt->execute([':uid' => $userId, ':rid' => $roleId]);
     }
+<<<<<<< HEAD
 
     public static function syncRoles(int $userId, array $roleIds): bool {
         $db = self::db();
@@ -149,4 +160,6 @@ class UserModel extends Model {
             throw $error;
         }
     }
+=======
+>>>>>>> origin/main
 }

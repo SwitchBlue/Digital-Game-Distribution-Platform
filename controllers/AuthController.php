@@ -4,7 +4,11 @@
 // =============================================================================
 
 class AuthController extends Controller {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/main
     public function showLogin() {
         $this->render('auth/login');
     }
@@ -107,4 +111,8 @@ class AuthController extends Controller {
         echo json_encode($_SESSION['user'] ?? null);
         exit;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

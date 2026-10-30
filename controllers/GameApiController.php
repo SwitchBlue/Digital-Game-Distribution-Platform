@@ -80,7 +80,11 @@ class GameApiController extends Controller {
                 }
             }
         }
+<<<<<<< HEAD
         if (!$isAuthor && !in_array('admin', $this->currentUserRoles(), true)) {
+=======
+        if (!$isAuthor && !in_array('admin', $_SESSION['user_roles'] ?? [], true)) {
+>>>>>>> origin/main
             $this->jsonError('You cannot edit this game', 403);
         }
 
@@ -110,6 +114,7 @@ class GameApiController extends Controller {
                 $this->jsonError('This slug is already in use', 409);
             }
         }
+<<<<<<< HEAD
         $data = array_filter(
             $data,
             static function (string $value, string $field) use ($game): bool {
@@ -127,6 +132,10 @@ class GameApiController extends Controller {
                 ($data['tieu_de'] ?? $game['tieu_de']) . ' vừa có thông tin mới.',
                 '/games/' . rawurlencode($data['duong_dan_rut_gon'] ?? $game['duong_dan_rut_gon'])
             );
+=======
+        if ($data) {
+            GameModel::update($game['ma'], $data);
+>>>>>>> origin/main
         }
 
         header('Content-Type: application/json');
@@ -148,4 +157,8 @@ class GameApiController extends Controller {
         echo json_encode(['error' => $message]);
         exit;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

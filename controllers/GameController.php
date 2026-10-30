@@ -3,6 +3,10 @@
 // GAME CONTROLLER
 // =============================================================================
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 class GameController extends Controller {
 
     public function index() {
@@ -42,10 +46,16 @@ class GameController extends Controller {
         $slug = $params['slug'] ?? '';
         $game = GameModel::findBySlug($slug);
         $user = $this->currentUser();
+<<<<<<< HEAD
         $userRoles = $user ? $this->currentUserRoles() : [];
         if ($game && $game['trang_thai'] !== 'published'
             && (!$user || ((int)$game['nguoi_tao_id'] !== (int)$user['ma']
                 && !in_array('admin', $userRoles, true)))) {
+=======
+        if ($game && $game['trang_thai'] !== 'published'
+            && (!$user || ((int)$game['nguoi_tao_id'] !== (int)$user['ma']
+                && !in_array('admin', $_SESSION['user_roles'] ?? [], true)))) {
+>>>>>>> origin/main
             $game = null;
         }
         if (!$game) {
@@ -72,7 +82,10 @@ class GameController extends Controller {
                 }
             }
         }
+<<<<<<< HEAD
         $isWatching = $user ? WatchModel::exists((int)$user['ma'], (int)$game['ma']) : false;
+=======
+>>>>>>> origin/main
 
         $this->render('game/detail', [
             'game' => $game,
@@ -85,6 +98,7 @@ class GameController extends Controller {
             'comments' => $comments,
             'devlogs' => $devlogs,
             'isAuthor' => $isAuthor,
+<<<<<<< HEAD
             'isWatching' => $isWatching,
             'csrfToken' => $this->csrfToken(),
         ]);
@@ -116,6 +130,11 @@ class GameController extends Controller {
         $this->redirect('/games/' . rawurlencode($slug));
     }
 
+=======
+        ]);
+    }
+
+>>>>>>> origin/main
     public function showCreate() {
         $this->requireAuth();
         $error = $_SESSION['error'] ?? null;
@@ -205,6 +224,7 @@ class GameController extends Controller {
                     $title
                 );
             }
+<<<<<<< HEAD
             NotificationModel::notifyGameFollowers(
                 (int)$gameId,
                 (int)$user['ma'],
@@ -213,6 +233,8 @@ class GameController extends Controller {
                 $title . ' vừa được đăng tải.',
                 '/games/' . rawurlencode($slug)
             );
+=======
+>>>>>>> origin/main
             $db->commit();
         } catch (Throwable $exception) {
             if ($db->inTransaction()) {
@@ -269,4 +291,8 @@ class GameController extends Controller {
 
         return ['filename' => $filename, 'path' => $path];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

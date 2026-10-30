@@ -7,6 +7,7 @@ class ForumController extends Controller {
 
     public function index() {
         $forums = ForumModel::getAll();
+<<<<<<< HEAD
         $forumGroups = [];
         foreach ($forums as $forum) {
             $createdAt = (string)($forum['ngay_tao'] ?? '');
@@ -56,6 +57,13 @@ class ForumController extends Controller {
         $this->redirect('/forums/' . $forumId);
     }
 
+=======
+        $this->render('forum/list', [
+            'forums' => $forums,
+        ]);
+    }
+
+>>>>>>> origin/main
     public function show(array $params) {
         $id = (int)($params['id'] ?? 0);
         $forum = ForumModel::find($id);
@@ -70,6 +78,7 @@ class ForumController extends Controller {
             'topics' => $topics,
         ]);
     }
+<<<<<<< HEAD
 
     public function showCreateTopic(array $params) {
         $this->requireAuth();
@@ -164,3 +173,6 @@ class ForumController extends Controller {
         $this->redirect('/forums/' . $forumId . '/topics/' . $topicId);
     }
 }
+=======
+}
+>>>>>>> origin/main

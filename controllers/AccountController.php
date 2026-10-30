@@ -10,13 +10,17 @@ class AccountController extends Controller {
         $games = GameModel::findAllBy('nguoi_tao_id', $user['ma']);
         $ownedGames = OwnershipModel::listForUser((int)$user['ma']);
         $collections = CollectionModel::listForOwner($user['ma']);
+<<<<<<< HEAD
         $watchedGames = WatchModel::watchedGamesForUser((int)$user['ma']);
         $followedUsers = FollowModel::followedUsersForUser((int)$user['ma']);
+=======
+>>>>>>> origin/main
         $this->render('account/dashboard', [
             'user' => $user,
             'games' => $games,
             'ownedGames' => $ownedGames,
             'collections' => $collections,
+<<<<<<< HEAD
             'watchedGames' => $watchedGames,
             'followedUsers' => $followedUsers,
         ]);
@@ -57,3 +61,8 @@ class AccountController extends Controller {
         $this->redirect('/notifications');
     }
 }
+=======
+        ]);
+    }
+}
+>>>>>>> origin/main

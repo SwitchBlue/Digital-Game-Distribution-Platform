@@ -7,6 +7,7 @@ class FollowModel extends Model {
     protected static $table = 'theo_doi_nguoi_dung';
 
     public static function follow(int $followerId, int $targetId): bool {
+<<<<<<< HEAD
         if ($followerId === $targetId) {
             return false;
         }
@@ -15,6 +16,13 @@ class FollowModel extends Model {
              VALUES (:follower_id, :target_id)'
         );
         return $stmt->execute([':follower_id' => $followerId, ':target_id' => $targetId]);
+=======
+        if ($followerId === $targetId) return false;
+        return self::insertRow([
+            'nguoi_theo_doi_id' => $followerId,
+            'nguoi_duoc_theo_doi_id' => $targetId,
+        ]);
+>>>>>>> origin/main
     }
 
     public static function unfollow(int $followerId, int $targetId): bool {
@@ -27,6 +35,7 @@ class FollowModel extends Model {
         $stmt->execute([':f' => $followerId, ':t' => $targetId]);
         return $stmt->fetch() !== false;
     }
+<<<<<<< HEAD
 
     public static function followerIds(int $userId): array {
         $stmt = self::db()->prepare(
@@ -46,4 +55,6 @@ class FollowModel extends Model {
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchAll();
     }
+=======
+>>>>>>> origin/main
 }

@@ -13,10 +13,13 @@ class AuthorController extends Controller {
             $this->render('errors/404', ['message' => 'Tác giả không tìm thấy.']);
             return;
         }
+<<<<<<< HEAD
         $currentUser = $this->currentUser();
         $isFollowing = $currentUser && (int)$currentUser['ma'] !== $id
             ? FollowModel::isFollowing((int)$currentUser['ma'], $id)
             : false;
+=======
+>>>>>>> origin/main
 
         // Get games by this author
         $sql = "SELECT g.* FROM tro_choi g
@@ -30,15 +33,19 @@ class AuthorController extends Controller {
         $this->render('author/page', [
             'author' => $author,
             'games' => $games,
+<<<<<<< HEAD
             'isFollowing' => $isFollowing,
             'currentUser' => $currentUser,
             'csrfToken' => $this->csrfToken(),
+=======
+>>>>>>> origin/main
         ]);
     }
 
     public function games(array $params) {
         $this->show($params);
     }
+<<<<<<< HEAD
 
     public function follow(array $params) {
         $currentUser = $this->requireAuth();
@@ -63,3 +70,6 @@ class AuthorController extends Controller {
         $this->redirect('/author/' . $targetId);
     }
 }
+=======
+}
+>>>>>>> origin/main

@@ -3,6 +3,10 @@
 // REVIEW CONTROLLER
 // =============================================================================
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 class ReviewController extends Controller {
 
     public function create(array $params) {
@@ -41,4 +45,8 @@ class ReviewController extends Controller {
         echo json_encode(ReviewModel::listForGame($gameId));
         exit;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

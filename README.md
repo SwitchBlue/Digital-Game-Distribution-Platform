@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nen Tang Game Doc Lap Vi
 
 ## Run with XAMPP
@@ -25,3 +26,17 @@ WHERE u.ten_dang_nhap = 'YOUR_USERNAME';
 ```
 
 Admins can remove games from public access in **Quản trị → Trò chơi**; the game is hidden rather than physically deleted so related order and ownership history remains intact. In **Quản trị → Người dùng**, admins can assign roles. The current admin cannot change their own roles, and the final admin role cannot be removed.
+=======
+# Digital Game Distribution Platform
+
+An open-source digital game distribution platform built with PHP and MySQL, inspired by Steam, itch.io.
+
+This project was developed as part of the "Open Source Software Development" course.
+
+# Contributors
+
+- Nguyễn Thành Đạt
+- Nguyễn Thị Ngọc Thảo
+- Nguyễn Võ Hoàng Anh Thư
+- Hồ Xuân Phúc
+>>>>>>> origin/main
