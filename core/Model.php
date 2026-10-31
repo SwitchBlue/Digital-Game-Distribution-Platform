@@ -20,7 +20,7 @@ class Model {
             } catch (PDOException $e) {
                 http_response_code(500);
                 error_log('Database connection failed: ' . $e->getMessage());
-                die('Database connection failed. Check config/config.php and import test.sql in phpMyAdmin.');
+                die('Database connection failed. Verify MySQL is running and config/config.php is correct, then import new.sql into the configured database in phpMyAdmin.');
             }
         }
         return self::$db;

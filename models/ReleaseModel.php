@@ -7,11 +7,7 @@ class ReleaseModel extends Model {
     protected static $table = 'phien_ban_phat_hanh';
 
     public static function create(int $gameId, string $version, string $channel, string $notes, int $creatorId): int {
-<<<<<<< HEAD
         $releaseId = self::insert([
-=======
-        return self::insert([
->>>>>>> origin/main
             'tro_choi_id' => $gameId,
             'ten_phien_ban' => $version,
             'kenh_phat_hanh' => $channel,
@@ -19,7 +15,6 @@ class ReleaseModel extends Model {
             'nguoi_tao_id' => $creatorId,
             'ngay_phat_hanh' => date('Y-m-d H:i:s'),
         ]);
-<<<<<<< HEAD
         $game = GameModel::find($gameId);
         if ($game) {
             NotificationModel::notifyGameFollowers(
@@ -32,8 +27,6 @@ class ReleaseModel extends Model {
             );
         }
         return $releaseId;
-=======
->>>>>>> origin/main
     }
 
     public static function listForGame(int $gameId): array {

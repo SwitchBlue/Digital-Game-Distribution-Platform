@@ -21,7 +21,7 @@ foreach ($media as $item) {
 <article class="game-detail">
     <?php if ($backgroundImage !== null): ?>
         <figure class="game-detail-cover">
-            <img src="<?php echo $escape($backgroundImage); ?>" alt="<?php echo $escape($game['tieu_de']); ?>">
+            <img src="<?php echo $escape(app_media_url($backgroundImage)); ?>" alt="<?php echo $escape($game['tieu_de']); ?>">
         </figure>
     <?php endif; ?>
     <p><a href="<?php echo app_url('/games'); ?>">← Tất cả trò chơi</a></p>
@@ -61,7 +61,7 @@ foreach ($media as $item) {
     </div>
     <?php foreach ($media as $item): ?>
         <?php if (in_array($item['loai_media'], ['cover', 'thumbnail', 'screenshot'], true) && $item['url_media'] !== $backgroundImage): ?>
-            <figure><img src="<?php echo $escape($item['url_media']); ?>" alt="<?php echo $escape($item['van_ban_thay_the'] ?? $game['tieu_de']); ?>" loading="lazy"></figure>
+            <figure><img src="<?php echo $escape(app_media_url($item['url_media'])); ?>" alt="<?php echo $escape($item['van_ban_thay_the'] ?? $game['tieu_de']); ?>" loading="lazy"></figure>
         <?php elseif ($item['loai_media'] === 'trailer' || $item['loai_media'] === 'external_link'): ?>
             <p><a href="<?php echo $escape($item['url_media']); ?>" rel="noopener noreferrer"><?php echo $escape($item['chu_thich'] ?: 'Liên kết ngoài'); ?></a></p>
         <?php endif; ?>

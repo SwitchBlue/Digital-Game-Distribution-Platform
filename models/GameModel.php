@@ -14,7 +14,6 @@ class GameModel extends Model {
         return self::findBy('duong_dan_rut_gon', $slug);
     }
 
-<<<<<<< HEAD
     public static function removeFromPlatform(int $gameId): bool {
         return self::update($gameId, ['trang_thai' => 'hidden']);
     }
@@ -63,8 +62,6 @@ class GameModel extends Model {
         return (int)$stmt->fetchColumn();
     }
 
-=======
->>>>>>> origin/main
     public static function listPublished(array $filters = [], int $limit = 20, int $offset = 0): array {
         $where = ['trang_thai = :status'];
         $params = [':status' => 'published'];

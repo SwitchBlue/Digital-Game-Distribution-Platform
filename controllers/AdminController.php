@@ -4,11 +4,7 @@
 // =============================================================================
 
 class AdminController extends Controller {
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/main
     public function dashboard() {
         $user = $this->requireRole('admin');
         $games = GameModel::all('ngay_tao DESC LIMIT 20');
@@ -24,7 +20,6 @@ class AdminController extends Controller {
 
     public function games() {
         $user = $this->requireRole('admin');
-<<<<<<< HEAD
         $query = trim((string)($_GET['q'] ?? ''));
         $page = max(1, (int)($_GET['page'] ?? 1));
         $perPage = 50;
@@ -62,15 +57,6 @@ class AdminController extends Controller {
         $this->redirect('/admin/games');
     }
 
-=======
-        $games = GameModel::all('ngay_tao DESC LIMIT 100');
-        $this->render('admin/games', [
-            'user' => $user,
-            'games' => $games,
-        ]);
-    }
-
->>>>>>> origin/main
     public function reports() {
         $user = $this->requireRole('admin');
         $reports = ReportModel::listOpen();
@@ -82,7 +68,6 @@ class AdminController extends Controller {
 
     public function users() {
         $user = $this->requireRole('admin');
-<<<<<<< HEAD
         $query = trim((string)($_GET['q'] ?? ''));
         $page = max(1, (int)($_GET['page'] ?? 1));
         $perPage = 50;
@@ -155,12 +140,3 @@ class AdminController extends Controller {
         $this->redirect('/admin/users');
     }
 }
-=======
-        $users = UserModel::all('ngay_tao DESC LIMIT 100');
-        $this->render('admin/users', [
-            'user' => $user,
-            'users' => $users,
-        ]);
-    }
-}
->>>>>>> origin/main

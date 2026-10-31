@@ -20,7 +20,6 @@ class WatchModel extends Model {
         $stmt->execute([':uid' => $userId, ':gid' => $gameId]);
         return $stmt->fetch() !== false;
     }
-<<<<<<< HEAD
 
     public static function watch(int $userId, int $gameId): bool {
         $stmt = self::db()->prepare(
@@ -56,6 +55,4 @@ class WatchModel extends Model {
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchAll();
     }
-=======
->>>>>>> origin/main
 }

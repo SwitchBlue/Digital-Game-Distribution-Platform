@@ -32,7 +32,6 @@ class NotificationModel extends Model {
     public static function unreadCount(int $userId): int {
         return self::count('nguoi_dung_id = :uid AND da_doc = FALSE', [':uid' => $userId]);
     }
-<<<<<<< HEAD
 
     public static function notifyUsers(array $userIds, int $actorId, string $type, string $title, string $content, string $url): void {
         $userIds = array_values(array_unique(array_filter(
@@ -92,6 +91,4 @@ class NotificationModel extends Model {
         );
         return $stmt->execute([':notification_id' => $notificationId, ':user_id' => $userId]);
     }
-=======
->>>>>>> origin/main
 }

@@ -13,8 +13,4 @@ class CollectionController extends Controller {
             'collections' => $collections,
         ]);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

@@ -20,7 +20,7 @@
             <?php foreach ($ownedGames as $game): ?>
                 <a class="card library-game" href="<?php echo app_url('/games/' . rawurlencode($game['duong_dan_rut_gon'])); ?>">
                     <?php if (!empty($game['anh_mo_rong'])): ?>
-                        <img class="library-game-cover" src="<?php echo $escape($game['anh_mo_rong']); ?>" alt="<?php echo $escape($game['tieu_de']); ?>" loading="lazy">
+                        <img class="library-game-cover" src="<?php echo $escape(app_media_url($game['anh_mo_rong'])); ?>" alt="<?php echo $escape($game['tieu_de']); ?>" loading="lazy">
                     <?php else: ?>
                         <div class="library-game-cover library-game-cover-empty" aria-hidden="true"><span>✦</span></div>
                     <?php endif; ?>

@@ -1,13 +1,23 @@
-<<<<<<< HEAD
-# Nen Tang Game Doc Lap Vi
+# Digital Game Distribution Platform
+
+An open-source digital game distribution platform built with PHP and MySQL, inspired by Steam and itch.io.
+
+This project was developed as part of the "Open Source Software Development" course.
+
+## Contributors
+
+- Nguyễn Thành Đạt
+- Nguyễn Thị Ngọc Thảo
+- Nguyễn Võ Hoàng Anh Thư
+- Hồ Xuân Phúc
 
 ## Run with XAMPP
 
-1. Place the project folder in `C:\xampp\htdocs\BTT`.
+1. Place the project folder in the XAMPP `htdocs` directory.
 2. Start **Apache** and **MySQL** from the XAMPP Control Panel.
-3. Open phpMyAdmin, select **Import**, and import `test.sql`. The script creates and selects `nen_tang_game_doc_lap_vi_v2`.
+3. In phpMyAdmin, select the `nen_tang_game_doc_lap_vi_v2` database and import `new.sql`.
 4. Confirm the database settings in `config/config.php`. They match the default XAMPP MySQL account (`root`, no password).
-5. Open `http://localhost/BTT/` and register an account.
+5. Open `http://localhost/<project-folder>/` and register an account.
 
 The project uses Apache rewrite rules to route page URLs through the front controller. If URLs return 404, enable `mod_rewrite` and allow `.htaccess` overrides (`AllowOverride All`) for `htdocs`.
 
@@ -26,17 +36,3 @@ WHERE u.ten_dang_nhap = 'YOUR_USERNAME';
 ```
 
 Admins can remove games from public access in **Quản trị → Trò chơi**; the game is hidden rather than physically deleted so related order and ownership history remains intact. In **Quản trị → Người dùng**, admins can assign roles. The current admin cannot change their own roles, and the final admin role cannot be removed.
-=======
-# Digital Game Distribution Platform
-
-An open-source digital game distribution platform built with PHP and MySQL, inspired by Steam, itch.io.
-
-This project was developed as part of the "Open Source Software Development" course.
-
-# Contributors
-
-- Nguyễn Thành Đạt
-- Nguyễn Thị Ngọc Thảo
-- Nguyễn Võ Hoàng Anh Thư
-- Hồ Xuân Phúc
->>>>>>> origin/main

@@ -3,10 +3,6 @@
 // CART CONTROLLER
 // =============================================================================
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
 class CartController extends Controller {
 
     public function index() {
@@ -171,8 +167,4 @@ class CartController extends Controller {
         $_SESSION['success'] = 'Thanh toán mô phỏng thành công. Trò chơi đã được thêm vào thư viện của bạn.';
         $this->redirect('/account');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

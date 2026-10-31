@@ -5,10 +5,6 @@
 
 class JamController extends Controller {
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/main
     public function index() {
         $jams = JamModel::getAll();
         $this->render('jam/list', [
@@ -30,8 +26,4 @@ class JamController extends Controller {
             'entries' => $entries,
         ]);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main

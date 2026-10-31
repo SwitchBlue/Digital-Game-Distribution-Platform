@@ -7,11 +7,7 @@ class DevlogModel extends Model {
     protected static $table = 'nhat_ky_phat_trien';
 
     public static function create(int $gameId, int $authorId, string $title, string $slug, string $content, bool $publish = false): int {
-<<<<<<< HEAD
         $devlogId = self::insert([
-=======
-        return self::insert([
->>>>>>> origin/main
             'tro_choi_id' => $gameId,
             'tac_gia_nguoi_dung_id' => $authorId,
             'tieu_de' => $title,
@@ -20,7 +16,6 @@ class DevlogModel extends Model {
             'trang_thai' => $publish ? 'published' : 'draft',
             'ngay_cong_bo' => $publish ? date('Y-m-d H:i:s') : null,
         ]);
-<<<<<<< HEAD
         if ($publish) {
             $game = GameModel::find($gameId);
             if ($game) {
@@ -35,8 +30,6 @@ class DevlogModel extends Model {
             }
         }
         return $devlogId;
-=======
->>>>>>> origin/main
     }
 
     public static function listForGame(int $gameId): array {

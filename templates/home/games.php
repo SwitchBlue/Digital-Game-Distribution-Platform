@@ -57,7 +57,7 @@ $escape = static function ($value): string {
     <?php foreach ($games as $g): ?>
     <a class="card game-card" href="<?php echo app_url('/games/' . rawurlencode($g['duong_dan_rut_gon'])); ?>">
         <?php if (!empty($g['anh_mo_rong'])): ?>
-        <img class="game-cover" src="<?php echo $escape($g['anh_mo_rong']); ?>" alt="<?php echo $escape($g['tieu_de']); ?>" loading="lazy" />
+        <img class="game-cover" src="<?php echo $escape(app_media_url($g['anh_mo_rong'])); ?>" alt="<?php echo $escape($g['tieu_de']); ?>" loading="lazy" />
         <?php else: ?>
         <div class="game-cover game-cover-empty" aria-hidden="true"><span>✦</span></div>
         <?php endif; ?>
